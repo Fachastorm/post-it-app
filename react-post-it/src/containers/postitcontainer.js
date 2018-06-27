@@ -22,9 +22,15 @@ class PostItContainer extends Component{
     render(){
         return(
             <div>
+                <div>
+                <button class="newPostButton">
+                  New post!
+                </button>
+                </div>
                 {this.state.ideas.map((idea) => {
                 return (<Post idea={idea} key={idea.id} />)
                 })}
             </div>
-        
+        )}
+    };
 export default PostItContainer
