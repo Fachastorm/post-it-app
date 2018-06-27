@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import PostItContainer from './containers/postitcontainer'
+import Home from './components/home'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          <h1 className="App-header">Post-It Notes</h1>
+       <Home />
        <PostItContainer />
       </div>
     );

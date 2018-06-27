@@ -23,7 +23,7 @@ class PostItContainer extends Component{
         return(
             <div>
                 <div>
-                <button class="newPostButton">
+                <button className="newPostButton">
                   New post!
                 </button>
                 </div>
