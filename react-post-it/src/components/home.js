@@ -1,5 +1,4 @@
 import React from 'react'; 
-import pic from '../style/post-it.jpg'
 
 const Home = () => { 
     return(
