@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { loadPosts } from '../actions/actions'
 
 
-class PostItContainer extends Component{
+class PostPage extends Component{
     constructor(props){ 
         super()
             this.state = {
@@ -14,22 +14,9 @@ class PostItContainer extends Component{
     }
 
     componentDidMount(){ 
-        this.props.loadPosts
+        this.props.loadPosts();
        };
 
-    // handleNewPost = () => { 
-    //     axios.post('http://localhost:3001/api/v1/posts',
-    // {post:
-    //     { 
-    //         title:'', 
-    //         body:''
-    //     }
-    // }
-    // )
-    // .then(response => { 
-    //     console.log(response)
-    // });
-    // }
 
     render(){
         return(
@@ -39,7 +26,7 @@ class PostItContainer extends Component{
                   New post!
                 </button>
                 </div>
-                {this.state.posts.map((post) => {
+                {this.props.posts.map((post) => {
                 return (<Post post={post} key={post.id} />)
                 })}
             </div>
@@ -57,4 +44,4 @@ class PostItContainer extends Component{
             loadPosts: loadPosts
         }, dispatch);
     }
-export default connect(mapStateToProps, mapDispatchToProps)(PostItContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PostPage);

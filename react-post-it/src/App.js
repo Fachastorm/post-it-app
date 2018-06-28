@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import PostItContainer from './containers/postitcontainer'
+import PostPage from './containers/postPage'
 import Home from './components/home'
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
        <Home />
-       <PostItContainer />
+       <PostPage />
       </div>
     );
   }
