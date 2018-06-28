@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Post from '../components/post';
-import { connnect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { loadPosts } from '../actions/actions'
 
 
@@ -50,4 +51,10 @@ class PostItContainer extends Component{
             posts: state.posts
         }
     }
-export default PostItContainer
+
+    const mapDispatchToProps = (dispatch) => { 
+        return bindActionCreators({ 
+            loadPosts: loadPosts
+        }, dispatch);
+    }
+export default connect(mapStateToProps, mapDispatchToProps)(PostItContainer);
