@@ -1,34 +1,49 @@
 import React, { Component } from 'react';
 import Post from '../components/post';
 
+
 class PostItContainer extends Component{
     constructor(props){ 
         super()
             this.state = {
-                ideas: []
+                posts: []
             }
     }
 
     componentDidMount(){ 
-        fetch('http://localhost:3001/posts.json')
+        fetch('http://localhost:3001/api/v1/posts.json')
         .then(response => response.json())
         .then(json => { 
             this.setState({
-                ideas: json
+                posts: json
             })
         }
         )};
+
+    handleNewPost = () => { 
+        axios.post('http://localhost:3001/api/v1/posts',
+    {post:
+        { 
+            title:'', 
+            body:''
+        }
+    }
+    )
+    .then(response => { 
+        console.log(response)
+    });
+    }
 
     render(){
         return(
             <div>
                 <div>
-                <button className="newPostButton">
+                <button className="newPostButton" onClick={this.handleNewPost}>
                   New post!
                 </button>
                 </div>
-                {this.state.ideas.map((idea) => {
-                return (<Post idea={idea} key={idea.id} />)
+                {this.state.posts.map((post) => {
+                return (<Post post={post} key={post.id} />)
                 })}
             </div>
         )}

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Post = ({ idea }) => 
-    <div className="tile" key={idea.id}>
-        <h4>{idea.title}</h4>
-        <p>{idea.body}</p>
+const Post = ({ post }) => 
+    <div className="tile" key={post.id}>
+        <h4>{post.title}</h4>
+        <p>{post.body}</p>
     </div>
 
 export default Post
