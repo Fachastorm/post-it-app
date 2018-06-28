@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Post from '../components/post';
+import { connnect } from 'react-redux';
+import { loadPosts } from '../actions/actions'
 
 
 class PostItContainer extends Component{
@@ -11,28 +13,22 @@ class PostItContainer extends Component{
     }
 
     componentDidMount(){ 
-        fetch('http://localhost:3001/api/v1/posts.json')
-        .then(response => response.json())
-        .then(json => { 
-            this.setState({
-                posts: json
-            })
-        }
-        )};
+        this.props.loadPosts
+       };
 
-    handleNewPost = () => { 
-        axios.post('http://localhost:3001/api/v1/posts',
-    {post:
-        { 
-            title:'', 
-            body:''
-        }
-    }
-    )
-    .then(response => { 
-        console.log(response)
-    });
-    }
+    // handleNewPost = () => { 
+    //     axios.post('http://localhost:3001/api/v1/posts',
+    // {post:
+    //     { 
+    //         title:'', 
+    //         body:''
+    //     }
+    // }
+    // )
+    // .then(response => { 
+    //     console.log(response)
+    // });
+    // }
 
     render(){
         return(
@@ -48,4 +44,10 @@ class PostItContainer extends Component{
             </div>
         )}
     };
+
+    const mapStateToProps = (state) => { 
+        return{ 
+            posts: state.posts
+        }
+    }
 export default PostItContainer
