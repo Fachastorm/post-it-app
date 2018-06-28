@@ -9,7 +9,8 @@ class PostPage extends Component{
     constructor(props){ 
         super()
             this.state = {
-                posts: []
+                posts: [],
+                editingId: null
             }
     }
 
