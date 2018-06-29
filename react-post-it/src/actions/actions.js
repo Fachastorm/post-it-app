@@ -8,13 +8,13 @@ export function loadPosts(posts){
     }
 
 
-export function submitPost(formContent){ 
+export function createPost(post){ 
     return(dispatch) => { 
         dispatch({type: 'SUBMITTING_POST' });
         return fetch('http://localhost:3001/api/v1/posts',
     {method: 'POST',
     headers: {'Content-Type': 'application/json'}, 
-    body: JSON.stringify({post: formContent})})
+    body: JSON.stringify({post: post})})
     .then(response => response.json())
     .then(post => dispatch({type: 'SUBMIT_POST', post: post}))
     }
