@@ -12,12 +12,14 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
+          <div>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/posts' component={postPage} />
             <Route exact path='/posts/new' component={PostForm} />
             <Navbar />
           </Switch>
+          </div>
           </Router>
       </div>
     );

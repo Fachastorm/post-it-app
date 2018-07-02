@@ -3,11 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 const link = {
   width: '80px',
-  padding: '12px',
-  margin: '0 6px 6px',
-  background: 'white',
+  padding: '0px',
+  margin: '0px 10px 100px 0px',
+  background: 'black',
   textDecoration: 'none',
-  color: 'black',
+  color: 'yellow',
+  position: 'relative', 
+  top: '10px',
 }
 
 
@@ -19,25 +21,28 @@ const Navbar = () => {
       exact
       style={link}
       activeStyle={{
-        background: "white"
+        background: "yellow",
+        color: 'black'
       }}
-      >Add a new playlist</NavLink>
+      >New Post</NavLink>
     <NavLink
       to="/posts"
       exact
       style={link}
       activeStyle={{
-        background: "white"
+        background: "yellow",
+        color: 'black'
       }}
-      >visit the list of posts</NavLink>
+      >Board</NavLink>
     <NavLink
       to="/"
       exact
       style={link}
       activeStyle={{
-        background: "white"
+        background: "yellow",
+        color: 'black'
       }}
-      >Home page</NavLink>
+      >Home</NavLink>
     </div>
     )
 }

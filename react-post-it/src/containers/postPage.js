@@ -3,6 +3,8 @@ import Post from '../components/post';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { loadPosts } from '../actions/actions'
+import Home from '../components/home'
+import Navbar from '../components/Navbar'
 
 class PostPage extends Component{
     constructor(props){ 
@@ -21,8 +23,10 @@ class PostPage extends Component{
     render(){
         return(
             <div>
-              
+            <Home />
+
                 {this.props.posts.map((post) => {
+                     
                 return (<Post post={post} key={post.id} />)
                 })}
             </div>
