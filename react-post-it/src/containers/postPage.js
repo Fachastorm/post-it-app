@@ -22,7 +22,7 @@ class PostPage extends Component{
 
     render(){
         return(
-            <div>
+            <div className="App-header">
             <Home />
 
                 {this.props.posts.map((post) => {

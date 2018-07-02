@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createPost } from '../actions/actions';
+import Home from '../components/home';
 
 class PostForm extends Component{ 
     constructor(props){ 
@@ -21,7 +22,16 @@ class PostForm extends Component{
     handleSubmit = event => { 
         event.preventDefault(); 
         this.props.createPost(this.state, this.props.history)
+        this.props.history.replace('/posts')
     }
-}
 
-export default PostForm
+    render(){ 
+        return(
+        <div className="App-header">
+        <Home />
+        <h1>Add a Post!</h1>
+        </div>
+    )}
+
+}
+export default connect(null, {createPost})(PostForm);
