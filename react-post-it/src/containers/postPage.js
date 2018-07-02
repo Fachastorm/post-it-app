@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { loadPosts } from '../actions/actions'
 
-
 class PostPage extends Component{
     constructor(props){ 
         super()
@@ -22,11 +21,7 @@ class PostPage extends Component{
     render(){
         return(
             <div>
-                <div>
-                <button className="newPostButton" onClick={this.handleNewPost}>
-                  New post!
-                </button>
-                </div>
+              
                 {this.props.posts.map((post) => {
                 return (<Post post={post} key={post.id} />)
                 })}

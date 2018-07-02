@@ -6,7 +6,7 @@ const initialState = {
 export default (state = initialState, action) => { 
     switch(action.type) {
         case 'UPDATED_POST': 
-        return action.postFormData
+        return action.payload;
 
         case 'RESET_POST': 
         return initialState; 
