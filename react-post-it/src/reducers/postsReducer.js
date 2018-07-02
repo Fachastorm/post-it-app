@@ -3,7 +3,7 @@ export default function postsReducer(state = [], action){
         case 'GET_POST_SUCCESS':
             return action.posts;
         case 'CREATE_POST_SUCCESS':
-        return[...state, action.post]; 
+        return[...state, action.post];
         default: 
         return state;
     }
