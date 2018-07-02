@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createPost } from '../actions/actions';
-import { updatePostForm } from '../actions/postForm';
 
 class PostForm extends Component{ 
     constructor(props){ 
@@ -24,3 +23,5 @@ class PostForm extends Component{
         this.props.createPost(this.state, this.props.history)
     }
 }
+
+export default PostForm
