@@ -1,21 +1,46 @@
+//** action creators */
+
+export function setPost(posts){ 
+    return { 
+        type: "GET_POST_SUCCESS", 
+        posts
+    };
+};
+
+export function addPost(post){ 
+    return{ 
+        type: "CREATE_POST_SUCCESS",
+        post
+    };
+};
+
+export const removePost = postId => { 
+    return{ 
+        type:"REMOVE_POST", 
+        postId
+    }
+}
+
+//**async actions */
+
+
 export function loadPosts(posts){ 
-    return(dispatch) => { 
-        dispatch({type: 'LOADING_POSTS'}); 
+    return dispatch => { 
         return fetch('http://localhost:3001/api/v1/posts.json')
         .then(response => response.json())
-        .then(posts => dispatch({type:'FETCH_POSTS', posts: posts}));
+        .then(posts => dispatch(setPost(posts)))
+        .catch(error => console.log(error))
         }
     }
 
 
 export function createPost(post){ 
     return(dispatch) => { 
-        dispatch({type: 'SUBMITTING_POST' });
         return fetch('http://localhost:3001/api/v1/posts',
     {method: 'POST',
     headers: {'Content-Type': 'application/json'}, 
     body: JSON.stringify({post: post})})
     .then(response => response.json())
-    .then(post => dispatch({type: 'SUBMIT_POST', post: post}))
+    .then(post => dispatch(addPost(post)))
     }
 };
