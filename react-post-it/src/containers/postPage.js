@@ -22,8 +22,8 @@ class PostPage extends Component{
 
     render(){
         return(
-            <div className="App-header">
-            <Home />
+            <div>
+            <Navbar />
 
                 {this.props.posts.map((post) => {
                      

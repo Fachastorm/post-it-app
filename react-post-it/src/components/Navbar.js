@@ -10,7 +10,8 @@ const link = {
   color: 'yellow',
   position: 'relative', 
   top: '10px',
-  align:'center'
+  align:'center',
+  font: '18px'
 }
 
 

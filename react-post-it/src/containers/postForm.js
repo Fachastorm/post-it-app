@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createPost } from '../actions/actions';
-import Home from '../components/home';
+import Navbar from '../components/Navbar';
 
 class PostForm extends Component{ 
     constructor(props){ 
@@ -27,10 +27,10 @@ class PostForm extends Component{
 
     render(){ 
         return(
-        <div className="App-header">
-        <Home />
-        <h1>Add a Post!</h1>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
+        <div className>
+        <Navbar />
+        <h1 className="post-title">Add a Post!</h1>
+        <form className="tile-new" onSubmit={(event) => this.handleSubmit(event)}>
         <div>
             <label htmlFor="title">Title:</label>
             <input 
@@ -41,7 +41,7 @@ class PostForm extends Component{
         </div>
         <div>
             <label htmlFor="body">Note:</label>
-            <input 
+            <textarea 
             type="text"
             onChange={(event) => this.handleOnChange(event)}
             name="body"

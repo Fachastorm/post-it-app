@@ -11,10 +11,12 @@
 
 .Title {
   background-color: yellow;
-  height: 50px;
+  height: auto;
   text-align: center;
   margin: auto;
   color: black;
+  font-size: 60px;
+  margin-top: 300px;
 }
 
 
@@ -34,6 +36,24 @@ h3{
   text-align: center;
 }
 
+.post-title{ 
+  background-color: yellow; 
+  width: fit-content;
+  margin: auto;
+  width: auto;
+  text-align: center;
+  margin-top: 20px;
+  border: 1px black;
+}
+
+label { 
+  font-size: 18px;
+  margin: auto;
+  margin-right: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
 .newPostButton { 
   background: black;
   color: yellow;
@@ -44,4 +64,37 @@ h3{
   margin-right: 10px;
   margin-left: 10px;
   padding:10px;
+}
+
+input {
+  border: solid 1px black;
+  background: white;
+  outline: none;
+  margin-top:10px;
+  width: 140px;
+  font-size: 11px;
+  margin-right: 60px;
+}
+
+input:focus {
+  border: solid 1px lightgrey;
+}
+
+textarea {
+  resize: none;
+  margin-top: 30px;
+  height: 90px;
+  font-size: 11px;
+}
+
+
+.tile-new{ 
+  height: 200px;
+  width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  background:lightyellow;
+  float: center;
+  font-size: 11px;
+  text-align: center;
 }
