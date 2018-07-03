@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import Post from '../components/post';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { loadPosts } from '../actions/actions'
-import Home from '../components/home'
+import { loadPosts, deletePost } from '../actions/actions'
 import Navbar from '../components/Navbar'
+
 
 class PostPage extends Component{
     constructor(props){ 
         super()
             this.state = {
                 posts: [],
-                editingId: null
             }
     }
 
@@ -19,6 +18,9 @@ class PostPage extends Component{
         this.props.loadPosts();
        };
 
+    handleDelete = post => { 
+        this.props.deletePost(post)
+    }
 
     render(){
         return(
@@ -27,7 +29,7 @@ class PostPage extends Component{
 
                 {this.props.posts.map((post) => {
                      
-                return (<Post post={post} key={post.id} />)
+                return (<Post post={post} key={post.id} handleDelete={this.handleDelete}/>)
                 })}
             </div>
         )}
@@ -41,7 +43,8 @@ class PostPage extends Component{
 
     const mapDispatchToProps = (dispatch) => { 
         return bindActionCreators({ 
-            loadPosts: loadPosts
+            loadPosts: loadPosts,
+            deletePost: deletePost
         }, dispatch);
     }
 export default connect(mapStateToProps, mapDispatchToProps)(PostPage);

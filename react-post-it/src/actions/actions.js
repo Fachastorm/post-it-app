@@ -14,7 +14,7 @@ export function addPost(post){
     };
 };
 
-export const removePost = postId => { 
+export const removePost = (postId) => { 
     return{ 
         type:"REMOVE_POST", 
         postId
@@ -43,4 +43,16 @@ export function createPost(post){
     .then(response => response.json())
     .then(post => dispatch(addPost(post)))
     }
+};
+
+export const deletePost = post => {
+    return dispatch => {
+      return fetch(`http://localhost:3001/api/v1/posts/${post.id}`, {
+        method: 'DELETE'
+    })
+    .then(res => {
+      dispatch(removePost(post.id))
+    })
+    .catch(error => console.log(error))
+  }
 };

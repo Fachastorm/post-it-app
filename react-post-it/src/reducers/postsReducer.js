@@ -6,10 +6,8 @@ export default function postsReducer(state = [], action){
         case 'CREATE_POST_SUCCESS':
         return[...state, action.post];
 
-        case "REMOVE_POST": { 
-            const idx=state.findIndex(post => post.id === action.postId);
-            return[...state.slice(0, idx), ...state.slice(idx+1)]
-        }
+        case "REMOVE_POST": 
+            return state.filter(toy => toy.id !== action.id)
         default: 
         return state;
     }

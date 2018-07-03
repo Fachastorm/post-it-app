@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import PostPage from './containers/postPage'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './components/home'
 import PostForm from './containers/postForm'
 import postPage from './containers/postPage';
 import Navbar from './components/Navbar';
+import PostShow from './containers/postShow';
 
 class App extends Component {
   render() {

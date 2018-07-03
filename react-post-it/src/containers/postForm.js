@@ -27,7 +27,7 @@ class PostForm extends Component{
 
     render(){ 
         return(
-        <div className>
+        <div>
         <Navbar />
         <h1 className="post-title">Add a Post!</h1>
         <form className="tile-new" onSubmit={(event) => this.handleSubmit(event)}>
