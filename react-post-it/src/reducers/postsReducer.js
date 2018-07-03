@@ -7,7 +7,7 @@ export default function postsReducer(state = [], action){
         return[...state, action.post];
 
         case "REMOVE_POST": 
-            return state.filter(toy => toy.id !== action.id)
+            return state.filter(post => post.id !== action.id)
         default: 
         return state;
     }

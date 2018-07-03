@@ -14,10 +14,10 @@ export function addPost(post){
     };
 };
 
-export const removePost = (postId) => { 
+export const removePost = (id) => { 
     return{ 
         type:"REMOVE_POST", 
-        postId
+        id
     }
 }
 
